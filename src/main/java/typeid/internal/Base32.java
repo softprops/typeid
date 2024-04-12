@@ -34,6 +34,10 @@ public class Base32 {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
   };
 
+  /**
+   * @param src encoded bytes
+   * @return decoded bytes if valid
+   */
   public static Optional<byte[]> decode(byte[] src) {
     if (src.length != 26) {
       return Optional.empty();
@@ -91,6 +95,10 @@ public class Base32 {
         });
   }
 
+  /**
+   * @param src raw bytes
+   * @return string is valid
+   */
   public static Optional<String> encode(byte[] src) {
     if (src.length != 16) {
       return Optional.empty();
