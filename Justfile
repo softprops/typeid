@@ -24,3 +24,10 @@ publish:
     #OSSRH_USER=
     #OSSRH_PASSWORD=
     @./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
+
+# pull the latest specs
+pull-specs:
+    @curl -s https://raw.githubusercontent.com/jetify-com/typeid/main/spec/invalid.yml \
+        > src/test/resources/invalid.yml
+    @curl -s https://raw.githubusercontent.com/jetify-com/typeid/main/spec/valid.yml \
+        > src/test/resources/valid.yml
